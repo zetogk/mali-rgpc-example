@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package notification;
+
+message EmailRequest {
+
+    string message = 1;
+
+}
+
+message EmailResponse {
+
+    int32 send = 1;
+    string message = 2;
+
+}
+
+service Notification {
+
+    rpc SendEmail (EmailRequest) returns (EmailResponse);
+
+}
